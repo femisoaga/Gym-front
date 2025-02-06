@@ -1,108 +1,152 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const Header = () => {
+function Header() {
+  const location = useLocation();
+
   return (
     <div>
-         <header className="main-header-two">
-          <div className="main-menu-two__top">
-            <div className="main-menu-two__top-inner">
-              {/* <ul className="list-unstyled main-menu-two__contact-list">
-                <li>
-                  <div className="icon">
-                    <i className="icon-envolop"></i>
-                  </div>
-                  <div className="text">
-                    <p>
-                      <a href="mailto:info@example.com">info@example.com</a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className="icon">
-                    <i className="icon-pin"></i>
-                  </div>
-                  <div className="text">
-                    <p>8502 Preston Rd. Inglewood</p>
-                  </div>
-                </li>
-              </ul> */}
-              <div className="main-menu-two__top-right">
-                <div className="main-menu-two__social-box">
-                  <div className="main-menu-two__social-box-inner">
-                    <h4 className="main-menu-two__social-box-title">
-                      Follow Us:
-                    </h4>
-                    <div className="main-menu-two__social">
-                      <a href="#">
-                        <i className="icon-facebook"></i>
-                      </a>
-                      <a href="#">
-                        <i className="icon-twitter"></i>
-                      </a>
-                      <a href="#">
-                        <i className="icon-link-in"></i>
-                      </a>
-                      <a href="#">
-                        <i className="icon-youtube"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <header
+        className="lg:py-4 h-20 lg:px-6 py-3 px-4 shadow-[0_4px_4px_0px_rgba(0,0,0,0.3)] bg-white/100 backdrop-blur-xl z-40 dark:bg-slate-900/80 uk-animation-slide-top-small"
+        uk-sticky
+      >
+        <div className="max-w-[1440px] mx-auto"></div>
+        <div className="flex items-center justify-between">
+          <div className="relative z-20 flex items-center gap-2">
+            <button
+              type="button"
+              className="p-2.5 text-lg max-md:flex hidden group z"
+              uk-toggle="target: #header-nav ; cls:max-md:hidden"
+            >
+              {/* <ion-icon
+            name="menu"
+            className="hidden group-aria-expanded:inline"
+          ></ion-icon>
+          <ion-icon
+            name="close"
+            className="group-aria-expanded:hidden"
+          ></ion-icon> */}
+            </button>
+            <Link to="dashboard">
+              <img
+                src="./assets/images/logo.png"
+                alt=""
+                className="hidden md:block lg:block mt-[5px] w-[189.70px] h-[59px]"
+              />
+            </Link>
           </div>
-          <nav className="main-menu main-menu-two">
-            <div className="main-menu-two__wrapper">
-              <div className="main-menu-two__wrapper-inner">
-                <div className="site-logo main-menu-two__logo">
-                  <Link to="/">
-                    <img src='/assets/images/resources/logo.png' alt="logo" className='w-42' />
-                  </Link>
-                </div>
-                <div className="main-menu-two__menu-box">
-                    <div className="main-menu-two__main-menu-box">
-                        <ul className="main-menu__list">
-                            <li>
-                                <Link to="/pricing">Pricing</Link>
-                            </li>
-                            <li>
-                                <a href="faq">Faq</a>
-                            </li>
-                          
-                            <li className="dropdown">
-                                <a href="#">Blog</a>
-                                <ul>
-                                    <li><a href="#">Blog Gird</a></li>
-                                    <li><a href="#">Blog List</a></li>
-                                    <li><a href="#">Blog Details</a></li>
-                                </ul>
-                            </li>
-                        
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="main-menu-two__right d-flex align-items-center gap-sm-4 gap-3">
-                    <Link to="/login" 
-                       className="btn btn-outline-primary px-4 py-2 font-semibold rounded-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition duration-300">
-                       Login
-                    </Link>
-                    <Link to="/register" 
-                       className="btn btn-primary px-4 py-2 font-semibold rounded-lg bg-green-500 text-white hover:bg-green-600 transition duration-300">
-                       Sign Up
-                    </Link>
-                </div>
+          <div
+            id="header-nav"
+            className="max-md:hidden max-md:bg-white max-md:p-5 max-md:fixed max-md:top-0 max-md:shadow-md max-md:left-0 max-md:pt-14 max-md:w-full max-md:z-10"
+          >
+            <nav
+              className="flex font-semibold sm:items-start lg:items-center text-slate-500 dark:text-white/70 lg:gap-1 max-md:border-t max-md:pt-2 max-md:flex max-md:flex-col"
+              uk-scrollspy-nav="closest: Link ; scroll: true"
+            >
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/calender-checked.png"
+                />
+              </Link>
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/calender-date.png"
+                />
+              </Link>
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/3d-folder.png"
+                />
+              </Link>
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/realistic-upward.png"
+                />
+              </Link>
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/3d-movie.png"
+                />
+              </Link>
+              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+                <img
+                  className="h-auto w-[40px]"
+                  src="./assets/images/workout_icons/sports-gym.png"
+                />
+              </Link>
+            </nav>
+          </div>
+          <div className=" flex flex-row gap-4 mt-[-10px]">
+            <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <img
+                className="h-auto w-[54px]"
+                src="./assets/images/workout_icons/minimal-notification.png"
+              />
+            </Link>
+            <button
+              className="flex items-center px-1 py-2 text-sm bg-white border-0 rounded-md dark:text-white dark:bg-slate-700 group"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                className="w-[36.84px] h-[36.84px] rounded-full"
+                src="./assets/images/icons-yoga/5456d9c431578988d2340c4b5c4edd1c.png"
+              />
+              <div className="w-[185.64px] h-[39.27px] text-[#222222] text-[18.99px] font-semibold font-['Inter'] leading-[42.02px]">
+                System Admin
               </div>
-            </div>
-          </nav>
-        </header>
+            </button>
+          </div>
 
-        <div className="stricky-header stricked-menu main-menu main-menu-two">
-          <div className="sticky-header__content"></div>
+          <button
+            className=" font-bold mt-[-10px] items-center px-3  text-lg bg-white dark:text-white dark:bg-slate-700 group"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Navigations
+            {/* <ion-icon name="chevron-down-outline" className="ml-2 text-lg duration-200 group-aria-expanded:rotate-180 md hydrated" role="img" aria-label="chevron down outline"></ion-icon>  */}
+          </button>
+
+          <div
+            uk-dropdown="offset:10;pos: bottom-right ; animation: uk-animation-slide-bottom-small"
+            className="uk-dropdown"
+          >
+            <>
+              {location.pathname === "/dashboard" && (
+                <nav>
+                  <Link to="/workout">Workout Page</Link>
+                  <Link to="/yoga">Yoga Page</Link>
+                </nav>
+              )}
+
+              {location.pathname.startsWith("/workout") && (
+                <nav>
+                  <Link to="/workout">Home</Link>
+                  <Link to="/workout/reports">Reports</Link>
+                  <Link to="/workout/upcoming">Upcoming Workout</Link>
+                  <Link to="/workout/achievements">Achievements</Link>
+                </nav>
+              )}
+
+              {location.pathname.startsWith("/yoga") && (
+                <nav>
+                  <Link to="/yoga">Home</Link>
+                  <Link to="/yoga/blog">Blogs</Link>
+                </nav>
+              )}
+            </>
+          </div>
         </div>
+      </header>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
