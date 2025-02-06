@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/chirofind-responsive.css";
 import "./styles/chirofind.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
@@ -19,10 +19,12 @@ import Yoga from "./pages/Yoga/Yoga";
 import Blog from "./pages/Yoga/Blog";
 
 const App = () => {
+  const location = useLocation();
+
+  const hideHeaderPaths = ["/", "/login", "/register", "/pricing", "/faq", "/preference"];
   return (
     <div>
-      <BrowserRouter>
-        <Header />
+      {!hideHeaderPaths.includes(location.pathname) && <Header />}
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -45,7 +47,6 @@ const App = () => {
             <Route path="blog" element={<Blog />} />
           </Route>
         </Routes>
-      </BrowserRouter>
     </div>
   );
 };
