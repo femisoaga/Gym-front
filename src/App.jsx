@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing/Pricing";
 import Faq from "./pages/Faq/Faq";
 import Preference from "./pages/Preference/Preference";
 import Layout from "./Layout";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

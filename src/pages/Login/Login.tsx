@@ -71,7 +71,7 @@ function Login() {
                             type="text"
                             name="name"
                             placeholder="Full Name"
-                            required
+                            // required
                           />
                         </div>
                       </div>
@@ -81,7 +81,7 @@ function Login() {
                             type="email"
                             name="email"
                             placeholder="Email Address"
-                            required
+                            // required
                           />
                         </div>
                       </div>
@@ -100,7 +100,8 @@ function Login() {
                                                 </div>
                                             </div>
                                         </div> */}
-                      <div className="col-xl-12">
+                                        <Link to='/dashboard'>
+                                        <div className="col-xl-12">
                         <div className="appointment-two__btn-box">
                           <button
                             type="submit"
@@ -110,6 +111,8 @@ function Login() {
                           </button>
                         </div>
                       </div>
+                                        </Link>
+                    
                     </div>
                   </form>
                   <div className="result"></div>

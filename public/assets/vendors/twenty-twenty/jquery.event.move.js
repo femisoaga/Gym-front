@@ -57,7 +57,7 @@
 	// Shim for customEvent
 	// see https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
 	(function () {
-		if ( typeof window.CustomEvent === "function" ) return false;
+		// if ( typeof window.CustomEvent === "function" ) return false;
 		function CustomEvent ( event, params ) {
 			params = params || { bubbles: false, cancelable: false, detail: undefined };
 			var evt = document.createEvent( 'CustomEvent' );
