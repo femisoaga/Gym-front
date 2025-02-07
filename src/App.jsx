@@ -17,6 +17,14 @@ import Achievements from "./pages/Workout/Achievements";
 import Header from "./components/Header";
 import Yoga from "./pages/Yoga/Yoga";
 import Blog from "./pages/Yoga/Blog";
+import Nutrition from "./pages/Nutrition/Nutrition";
+import Fruit from "./pages/Fruit/Fruit";
+import BlogPage from "./pages/BlogPage/BlogPage";
+import Article from "./pages/BlogPage/Article";
+import Products from "./pages/Fruit/Products";
+import Goals from "./pages/Fruit/Goals";
+import Diet from "./pages/Nutrition/Diet";
+import Subscription from "./pages/Nutrition/Subscription";
 
 const App = () => {
   const location = useLocation();
@@ -45,6 +53,20 @@ const App = () => {
           <Route path="/yoga">
             <Route index element={<Yoga />} /> 
             <Route path="blog" element={<Blog />} />
+          </Route>
+          <Route path="/nutrition">
+            <Route index element={<Nutrition />} /> 
+            <Route path="diet" element={<Diet />} />
+            <Route path="subscription" element={<Subscription />} />
+          </Route>
+          <Route path="/fruit">
+            <Route index element={<Fruit />} /> 
+            <Route path="products" element={<Products />} />
+            <Route path="goals" element={<Goals />} />
+          </Route>
+          <Route path="/blog">
+            <Route index element={<BlogPage />} /> 
+            <Route path="article" element={<Article />} />
           </Route>
         </Routes>
     </div>

@@ -43,39 +43,57 @@ function Header() {
               className="flex font-semibold sm:items-start lg:items-center text-slate-500 dark:text-white/70 lg:gap-1 max-md:border-t max-md:pt-2 max-md:flex max-md:flex-col"
               uk-scrollspy-nav="closest: Link ; scroll: true"
             >
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                 className="h-auto w-[54px]"
+                to="#"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/calender-checked.png"
                 />
               </Link>
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                className="group lg:py-1.5 py-2.5 px-3 duration-500 transform"
+                to="/blog"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/calender-date.png"
                 />
               </Link>
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                className="group lg:py-1.5 py-2.5 px-3 duration-500 transform"
+                to="/fruit"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/3d-folder.png"
                 />
               </Link>
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                className="group lg:py-1.5 py-2.5 px-3 duration-500 transform"
+                to="/nutrition"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/realistic-upward.png"
                 />
               </Link>
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                className="group lg:py-1.5 py-2.5 px-3 duration-500 transform"
+                to="/yoga"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/3d-movie.png"
                 />
               </Link>
-              <Link className="lg:py-1.5 py-2.5 px-3 duration-500" to="#">
+              <Link
+                className="group lg:py-1.5 py-2.5 px-3 duration-500 transform"
+                to="/workout"
+              >
                 <img
-                  className="h-auto w-[40px]"
+                  className="h-auto w-[40px] group-hover:animate-bounce"
                   src="./assets/images/workout_icons/sports-gym.png"
                 />
               </Link>
@@ -121,8 +139,11 @@ function Header() {
             <>
               {location.pathname === "/dashboard" && (
                 <nav>
-                  <Link to="/workout">Workout Page</Link>
-                  <Link to="/yoga">Yoga Page</Link>
+                  <Link to="/workout">Workout </Link>
+                  <Link to="/yoga">Yoga </Link>
+                  <Link to="/nutrition">Nutrition</Link>
+                  <Link to="/fruit">Fruit page </Link>
+                  <Link to="/blog">Blog</Link>
                 </nav>
               )}
 
@@ -139,6 +160,29 @@ function Header() {
                 <nav>
                   <Link to="/yoga">Home</Link>
                   <Link to="/yoga/blog">Blogs</Link>
+                </nav>
+              )}
+
+              {location.pathname.startsWith("/blog") && (
+                <nav>
+                  <Link to="/blog">Home</Link>
+                  <Link to="/blog/article">Article</Link>
+                </nav>
+              )}
+
+              {location.pathname.startsWith("/fruit") && (
+                <nav>
+                  <Link to="/fruit">Home</Link>
+                  <Link to="/fruit/products">Products</Link>
+                  <Link to="/fruit/goals">Goals</Link>
+                </nav>
+              )}
+
+              {location.pathname.startsWith("/nutrition") && (
+                <nav>
+                  <Link to="/nutrition">Home</Link>
+                  <Link to="/nutrition/diet">Diet</Link>
+                  <Link to="/nutrition/subscription">Subscription</Link>
                 </nav>
               )}
             </>
